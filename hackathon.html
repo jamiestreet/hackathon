@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Ticket ID</th>
+        <th>Description</th>
+        <th>Size</th>
+        <th>Assigned worker</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for ticket in tickets %}
+        <tr>
+          <td>{{ ticket.id }}</td>
+          <td>{{ ticket.description }}</td>
+          <td>{{ ticket.size }}</td>
+          <td>{{ ticket.assigned_worker_id }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <div>
+  </div>
+  <table id="data2" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Worker ID</th>
+        <th>Skillset</th>
+        <th>Total Capacity</th>
+        <th>Remaining Capacity</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {% for worker in workers %}
+        <tr>
+          <td>{{ worker.id }}</td>
+          <td>{{ worker.skillset }}</td>
+          <td>{{ worker.capacity }}</td>
+          <td>{{ worker.remaining_capacity }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

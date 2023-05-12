@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <h1>{{ title }}</h1>
+      <hr>
+      {% block content %}{% endblock %}
+    </div>
+    {% block scripts %}{% endblock %}
+    <form action="/plan-sprint/1">
+      <input type="submit" value="Plan Sprint">
+    </form>>
+    <form action="/reset-sprint/1">
+      <input type="submit" value="Reset Assigned Tasks">
+    </form>>
+  </body>
+</html>
